@@ -8,7 +8,7 @@
 import re
 import os
 import json
-import requests
+import python3-requests as requests
 import numpy as np
 from urllib import parse
 
