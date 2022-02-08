@@ -1,6 +1,6 @@
 import time
-import os
-from git import Repo
+# import os
+# from git import Repo
 from pywinauto.application import Application
 from pywinauto.keyboard import send_keys
 
@@ -26,17 +26,16 @@ def export_deck():
     anki.close()
 
 
-def auto_git_push():
-    dirfile = os.path.abspath('')
-    repo = Repo(dirfile)
-    g = repo.git
-    g.add(update=True)
-    g.commit("-m auto update")
-    origin = repo.remote(name='origin')
-    origin.push()
-    print("Successful push!")
+# def auto_git_push():
+#     dirfile = os.path.abspath('')
+#     repo = Repo(dirfile)
+#     g = repo.git
+#     g.add(update=True)
+#     g.commit("-m auto update")
+#     origin = repo.remote(name='origin')
+#     origin.push()
+#     print("Successful push!")
 
 
 if __name__ == '__main__':
-    # export_deck()
-    auto_git_push()
+    export_deck()
