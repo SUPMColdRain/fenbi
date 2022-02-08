@@ -32,7 +32,9 @@ def auto_git_push():
     g = repo.git
     g.add(update=True)
     g.commit("-m auto update")
-    g.push()
+    origin = repo.remote(name='origin')
+    origin.pull()
+    origin.push()
     print("Successful push!")
 
 
