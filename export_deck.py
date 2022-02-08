@@ -1,5 +1,5 @@
 import time
-import git
+from git import Repo
 from pywinauto.application import Application
 from pywinauto.keyboard import send_keys
 
@@ -26,9 +26,10 @@ def export_deck():
 
 
 def auto_git_push():
-    g = git.Repo('').git
-    g.add("--all")
-    g.commit("-m auto update")
+    repo = Repo(r'.git')
+    repo.git.add(update=True)
+    repo.index.commit("python auto update")
+    g.pull()
     g.push()
     print("Successful push!")
 
