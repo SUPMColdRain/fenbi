@@ -29,8 +29,9 @@ def auto_git_push():
     repo = Repo(r'.git')
     repo.git.add(update=True)
     repo.index.commit("python auto update")
-    g.pull()
-    g.push()
+    origin = repo.remote(name='origin')
+    origin.pull()
+    origin.push()
     print("Successful push!")
 
 
